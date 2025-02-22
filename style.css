@@ -1,0 +1,285 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: poppins,sans-serif;
+    text-decoration: none;
+}
+body{
+    overflow-x: hidden;
+}
+.hero-header{
+    width:100%;
+    height: 100%;
+    min-height: 100vh;
+    background: #222;
+}
+.wrapper{
+    width: 1280px;
+    max-width: 95%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+header{
+    padding: 40px 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.logo{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo-img {
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.logo .logo-text{
+    font-size: 24px;
+    font-weight: 500;
+    color: rgb(250, 250, 250);
+}
+nav .togglebtn{
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    top: 45px;
+    right: 3%;
+    z-index: 5;
+    cursor: pointer;
+    display: none;
+}
+nav .togglebtn span{
+    display: block;
+    background-color: #007ced;
+    margin: 5px 0px;
+    width: 100%;
+    height: 3px;
+    transition: 0.3s;
+    transition-property: transform, opacity;
+}
+nav .navlinks{
+    list-style-type: none;
+}
+nav .navlinks li{
+    display: inline-block;
+}
+nav .navlinks li a {
+    position: relative; /* Needed for absolute positioning of underline */
+    color: #e5e5e5;
+    margin-right: 2.5rem;
+    text-decoration: none;
+    padding-bottom: 5px; /* Adds space for the underline */
+    transition: color 0.3s ease-in-out;
+}
+
+nav .navlinks li a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #ffd700; /* Yellow underline */
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+nav .navlinks li a:hover {
+    color: #ffd700; /* Changes text color to yellow on hover */
+}
+
+nav .navlinks li a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top:4rem;
+}
+/* Profile Picture Frame */
+.hero-pic {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden; /* Keeps image inside the circle */
+    border: 8px solid rgb(255, 219, 119); /* Default gold border */
+    box-shadow: 0 0 10px rgba(255, 219, 119, 0.5); /* Soft glow */
+    transition: box-shadow 0.3s ease-in-out, border 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.hero-pic:hover {
+    border: 8px solid rgb(255, 219, 119); /* Keep the border gold */
+    box-shadow: 0 0 20px rgba(255, 219, 119, 0.8); /* Enhanced neon glow */
+}
+
+/* Ensures image stays inside and centered */
+.hero-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Makes sure image fills the circle properly */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Optional: Slight zoom on hover */
+.hero-pic:hover img {
+    transform: scale(1.05); /* Smooth enlarge effect */
+}
+
+.hero-pic img{
+    height: 100%;
+    width:100%;
+    transition: 0.5s;
+}
+.hero-pic img:hover{
+    transform: scale(1.2);
+}
+.hero-text{
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+}
+.hero-text h5{
+    color: rgb(255 219 112);
+    font-size: 14px;
+}
+.hero-text h5 span{
+    color: #e5e5ee;
+    font-size: 16px;
+}
+.hero-text h1{
+    color: #e5e5e5;
+    font-size: 3rem;
+}
+.wave {
+    display: inline-block;
+    animation: wave-animation 1.5s infinite ease-in-out;
+    transform-origin: 70% 70%;
+}
+.hero-text p {
+    color: white; 
+    background: none; 
+    -webkit-text-fill-color: unset; 
+}
+@keyframes wave-animation {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(20deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(20deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.btn-group{
+    margin: 45px 0;
+}
+.btn-group .btn{
+    border-color: #ffd700;
+    color: #fff;
+    background-color: #333;
+    padding: 12px 25px;
+    margin: 5px 0px;
+    margin-right: 7px;
+    border-radius: 30px;
+    border: 2px solid #ffd700;
+    box-shadow: 0 10px 10px -8px rgb(0 0 0 / 78%);
+}
+.btn.active{
+    border-color: #ffd700;
+}
+
+/* Social Media Icons */
+.hero-text .social i{
+    font-size: 18px;
+    margin-right: 10px;
+    transition: 0.5s;
+}
+.hero-text .social .fa-facebook {
+    color: #1877f2; /* Facebook Blue */
+}
+.hero-text .social .fa-instagram {
+    background: linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.hero-text .social .fa-pinterest {
+    color: #bd081c; /* Pinterest Red */
+}
+
+/* Responsive design & displaying navbar for small screens */
+@media(max-width:930px)
+{
+    nav .togglebtn{
+        display: initial;
+    }
+    /* for toggle button */
+    .click {
+        top:45px;
+    }
+    .click span{
+        position: absolute;
+        margin-top:12px;
+    }
+    .click span:first-child{
+        transform: rotate(-45deg);
+    }
+    .click span:nth-child(2)
+    {
+        opacity: 0;
+        margin: 0;
+    }
+    .click span:last-child{
+        transform: rotate(45deg);
+        top: 0;
+    }
+    nav .navlinks{
+        position: absolute;
+        top: 110px;
+        right: -100%;
+        bottom: 0;
+        width: 60%;
+        height: 100vh;
+        background-color: #222;
+        z-index: 3;
+        box-shadow: 5px 13px 30px rgba(0,0,0,0.1);
+        transition: 0.5s;
+        padding: 25px 0px;
+    }
+    nav .navlinks li{
+        display: block;
+    }
+    nav .navlinks li a{
+        display: block;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+    nav .navlinks.open{
+        right:0;
+    }
+}
+.wave {
+    display: inline-block;
+    animation: wave-animation 1.5s infinite ease-in-out;
+    transform-origin: 70% 70%;
+}
+
+@keyframes wave-animation {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(20deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(20deg); }
+    100% { transform: rotate(0deg); }
+}
+.github-icon i {
+    font-size: 1.5rem;
+    margin-left: 10px;
+}
