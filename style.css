@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 *{
     box-sizing: border-box;
     padding: 0;
@@ -383,3 +384,390 @@ nav .navlinks li a:not(.github-icon):hover::after {
 }
 
 
+=======
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: poppins,sans-serif;
+    text-decoration: none;
+}
+body{
+    overflow-x: hidden;
+}
+.hero-header{
+    width:100%;
+    height: 100%;
+    min-height: 100vh;
+    background: #000000;
+}
+.wrapper{
+    width: 1280px;
+    max-width: 95%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+header{
+    padding: 40px 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.logo{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo-img {
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.logo .logo-text{
+    font-size: 24px;
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+}
+nav .togglebtn{
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    top: 45px;
+    right: 3%;
+    z-index: 5;
+    cursor: pointer;
+    display: none;
+}
+nav .togglebtn {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 35px;
+    height: 25px;
+    cursor: pointer;
+    position: relative;
+}
+
+nav .togglebtn span {
+    background-color: #ffffff;
+    height: 3px;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+    position: absolute;
+}
+
+nav .togglebtn span:first-child {
+    top: 0;
+}
+
+nav .togglebtn span:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+nav .togglebtn span:last-child {
+    bottom: 0;
+}
+
+/* When clicked, turns into an "X" */
+.togglebtn.click span:first-child {
+    transform: rotate(45deg);
+    top: 50%;
+    left: 0;
+}
+
+.togglebtn.click span:nth-child(2) {
+    opacity: 0;
+}
+
+.togglebtn.click span:last-child {
+    transform: rotate(-45deg);
+    top: 50%;
+    left: 0;
+}
+nav .navlinks{
+    list-style-type: none;
+}
+nav .navlinks li{
+    display: inline-block;
+}
+nav .navlinks li a {
+    position: relative;
+    color: #e5e5e5;
+    margin-right: 2.5rem;
+    text-decoration: none;
+    padding-bottom: 5px;
+    transition: color 0.3s ease-in-out;
+}
+nav .navlinks li a:not(.github-icon)::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #f9f7f7;
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+nav .navlinks li a:hover {
+    color: #ffffff;
+}
+nav .navlinks li a:not(.github-icon):hover::after {
+    width: 100%;
+    left: 0;
+}
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top:4rem;
+}
+.hero-pic {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    border:none;
+    box-shadow: #e5e5e5;
+    transition: box-shadow 0.3s ease-in-out, border 0.3s ease-in-out;
+}
+.hero-pic:hover {
+    border: 0px thin rgb(247, 247, 247);
+    box-shadow: 0 0 20px rgba(245, 245, 245, 0.8);
+}
+.hero-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+.hero-pic:hover img {
+    transform: scale(1.05);
+}
+.hero-pic img:hover{
+    transform: scale(1.2);
+}
+.hero-text{
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+}
+.hero-text h5{
+    color: rgb(255 219 112);
+    font-size: 14px;
+}
+.hero-text h5 span{
+    color: #e5e5ee;
+    font-size: 16px;
+}
+.hero-text h1{
+    color: #e5e5e5;
+    font-size: 3rem;
+}
+.github-icon {
+    text-decoration: none !important; /* Remove underline */
+}
+
+.github-icon i {
+    color: white; /* White icon */
+    background-color: black; /* Black inside */
+    border-radius: 50%;
+    font-size: 26px;
+    width: 50px;
+    height: 50px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+    -webkit-text-stroke: none; /* Remove the text stroke */
+    border: none !important; /* Force remove any border */
+    outline: none; /* Remove any outline */
+}
+
+/* Ensure no border or underline on hover */
+.github-icon:hover i {
+    color: white !important; /* Keep white icon */
+    background-color: black !important; /* Keep black background */
+    -webkit-text-stroke: none !important;
+    border: none !important;
+    outline: none !important;
+}
+
+.wave {
+    display: inline-block;
+    animation: wave-animation 1.5s infinite ease-in-out;
+    transform-origin: 70% 70%;
+}
+.hero-text p {
+    color: white;
+    background: none;
+    -webkit-text-fill-color: unset;
+}
+@keyframes wave-animation {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(20deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(20deg); }
+    100% { transform: rotate(0deg); }
+}
+.btn-group{
+    margin: 45px 0;
+}
+.btn-group .btn{
+    border-color: #000000;
+    color: #fff;
+    background-color: #333;
+    padding: 12px 25px;
+    margin: 5px 0px;
+    margin-right: 7px;
+    border-radius: 30px;
+    border: 2px solid #ffd700;
+    box-shadow: 0 10px 10px -8px rgb(0 0 0 / 78%);
+}
+.btn.active{
+    border-color: #030303;
+}
+.hero-text .social a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px; /* Bigger size */
+    height: 50px;
+    font-size: 26px; /* Increase icon size */
+    background-color: black; /* Black inside */
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+    margin-right: 10px; /* Add spacing */
+    position: relative;
+}
+
+/* White outline effect for the icon */
+.hero-text .social a i {
+    color: white; /* White icon */
+    transition: all 0.3s ease-in-out;
+    text-shadow: 
+        -2px -2px 0 black,  
+         2px -2px 0 black,  
+        -2px  2px 0 black,  
+         2px  2px 0 black; /* Creates the outlined effect */
+}
+
+/* Hover Effect: Invert Colors */
+.hero-text .social a:hover {
+    background-color: white; /* White inside */
+}
+
+.hero-text .social a:hover i {
+    color: black; /* Black icon */
+    text-shadow: 
+        -2px -2px 0 white,  
+         2px -2px 0 white,  
+        -2px  2px 0 white,  
+         2px  2px 0 white; /* White outline when hovered */
+}
+
+@media(max-width:930px) {
+    nav .togglebtn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 25px; /* Adjust size */
+        color: white; /* Keep it visible */
+        cursor: pointer;
+    }
+    .click {
+        top:45px;
+    }
+    .click span{
+        position: absolute;
+        margin-top:12px;
+    }
+    .click span:first-child{
+        transform: rotate(-45deg);
+    }
+    .click span:nth-child(2) {
+        opacity: 0;
+        margin: 0;
+    }
+    .click span:last-child{
+        transform: rotate(45deg);
+        top: 0;
+    }
+    nav .navlinks{
+        position: absolute;
+        top: 110px;
+        right: -100%;
+        bottom: 0;
+        width: 60%;
+        height: 100vh;
+        background-color: #222;
+        z-index: 3;
+        box-shadow: 5px 13px 30px rgba(0,0,0,0.1);
+        transition: 0.5s;
+        padding: 25px 0px;
+    }
+    nav .navlinks li{
+        display: block;
+    }
+    nav .navlinks li a{
+        display: block;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+    nav .navlinks.open{
+        right:0;
+    }
+}
+@media (max-width: 768px) {
+    /* Centering the profile image */
+    .hero-pic {
+        width: 120px; /* Adjust the width */
+        height: 120px; /* Adjust the height */
+        border-radius: 50%; /* Keeps it circular */
+        margin: 0 auto; /* Center horizontally */
+        display: block; /* Ensures it's displayed as a block element */
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Ensure smooth transitions */
+    }
+
+    /* Hover effect for profile image only */
+    .hero-pic:hover {
+        border: 0px thin rgb(247, 247, 247); /* Remove border on hover */
+        box-shadow: 0 0 20px rgba(245, 245, 245, 0.8); /* Hover box-shadow (neon effect) */
+    }
+
+    .hero-pic img:hover {
+        transform: scale(1.2); /* Scale image on hover */
+    }
+
+    /* Apply the hover effect on touch/click (active state) */
+    .hero-pic:active, .hero-pic img:active {
+        box-shadow: 0 0 20px rgba(245, 245, 245, 0.8); /* Keep the neon effect when clicked or touched */
+        transform: scale(1.2); /* Keep the scaling effect when clicked or touched */
+    }
+
+    /* Container adjustments for vertical and horizontal centering */
+    .container {
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        justify-content: flex-start; /* Align items towards the top */
+        align-items: center; /* Center items horizontally */
+        height: 100vh; /* Take full viewport height */
+        text-align: center; /* Centers the text inside */
+        margin-top: -50px; /* Move the container upwards */
+    }
+
+    /* Remove outline and border on focus for mobile */
+    .hero-pic:focus,
+    .hero-pic img:focus {
+        outline: none; /* Removes the outline on focus */
+        border: none; /* Removes any border */
+    }
+}
+
+
+>>>>>>> 1624eb62fea92d5a59aafe6637450a42d8b26eb7
